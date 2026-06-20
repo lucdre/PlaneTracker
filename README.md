@@ -22,13 +22,13 @@ A Raspberry Pi-based ADS-B telemetry server written in C++.
 
 SCP to the Raspberry Pi:
 ```bash
-scp .\PlaneTracker.cpp pi@192.168.1.XXX:/home/pi
+scp .\*.cpp .\*.h pi@192.168.1.XXX:~/PlaneTracker/
 ```
 
 Compile on the Raspberry Pi:
 
 ```bash
-g++ -std=c++20 PlaneTracker.cpp -o PlaneTracker
+g++ -std=c++20 *.cpp -o PlaneTracker
 ```
 
 Run:
