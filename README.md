@@ -11,7 +11,6 @@ A Raspberry Pi-based ADS-B telemetry server written in C++.
 - Raspberry Pi 4 Model B 8GB
 - FlightAware Pro Stick Plus
 - 3dBi ADS-B 1090 MHz magnetic antenna
-- Aluminium armor heatsink case
 
 ## Software
 
@@ -21,10 +20,15 @@ A Raspberry Pi-based ADS-B telemetry server written in C++.
 
 ## Building
 
+SCP to the Raspberry Pi:
+```bash
+scp .\PlaneTracker.cpp pi@192.168.1.XXX:/home/pi
+```
+
 Compile on the Raspberry Pi:
 
 ```bash
-g++ PlaneTracker.cpp -o PlaneTracker
+g++ -std=c++20 PlaneTracker.cpp -o PlaneTracker
 ```
 
 Run:

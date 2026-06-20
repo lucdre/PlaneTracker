@@ -1,10 +1,8 @@
-﻿// PlaneTracker.cpp : Defines the entry point for the application.
-//
-
-#include "PlaneTracker.h"
-#include <chrono>
+﻿#include <chrono>
 #include <thread>
 #include <fstream>
+#include <iostream>
+#include <iomanip>
 
 double getTemperature()
 {
@@ -25,7 +23,7 @@ int main()
 		time_t now_time = std::chrono::system_clock::to_time_t(now);
 
 		std::tm localTime;
-		localtime_s(&localTime, &now_time);
+		localtime_r(&now_time, &localTime);
 
 		std::cout << "Current time "
 			<< std::put_time(&localTime, "%Y-%m-%d %H:%M:%S")
