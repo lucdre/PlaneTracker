@@ -12,7 +12,7 @@ endif()
 project ("PlaneTracker")
 
 # Add source to this project's executable.
-add_executable (PlaneTracker "PlaneTracker/PlaneTracker.cpp")
+add_executable (PlaneTracker "src/PlaneTracker.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET PlaneTracker PROPERTY CXX_STANDARD 20)
