@@ -10,8 +10,9 @@ int main()
 {
 	while (true)
 	{
-		//Get the current date
+		//Get the current date and uptime
 		std::cout << getTimeStampString();
+		std::cout << getUptimeString();
 
 		//Get the temperature
 		std::cout << getTemperatureString();
