@@ -1,6 +1,9 @@
 #pragma once
 
-#include <string>
+struct MemoryStats
+{
+	double totalMb;
+	double usedMb;
+};
 
-std::string getMemoryString();
-double getMemoryUsedMb();
+MemoryStats getMemoryStats();

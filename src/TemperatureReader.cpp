@@ -17,17 +17,3 @@ double getTemperature()
 
 	return milliDegrees / 1000.0;
 }
-
-std::string getTemperatureString()
-{
-	double temperature = getTemperature();
-
-	std::ostringstream stream;
-
-	stream << "Temperature: "
-		<< temperature
-		<< " C"
-		<< '\n';
-
-	return stream.str();
-}

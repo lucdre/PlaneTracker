@@ -3,6 +3,7 @@
 #include "MemoryReader.h"
 #include "CpuLoadReader.h"
 #include "Logger.h"
+#include "SystemStats.h"
 
 #include <thread>
 #include <iostream>
@@ -12,24 +13,13 @@ int main()
 {
 	while (true)
 	{
-		//Get the current date and uptime
-		std::cout << getTimeStampString();
-		std::cout << getUptimeString();
+		SystemStats stats = getSystemStats();
 
-		//Get the temperature
-		std::cout << getTemperatureString();
+		printStats(stats);
 
-		//Get the memory usage
-		std::cout << getMemoryString();
+		logSystemStats(stats);
 
-		//Get the CPU load
-		std::cout << getCpuLoadString();
-
-		std::cout << '\n';
-
-		logSample();
-
-		//Sleep for 1 minute
+		//Sleep
 		std::this_thread::sleep_for(std::chrono::minutes(10));
 	}
 

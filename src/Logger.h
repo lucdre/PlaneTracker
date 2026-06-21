@@ -1,3 +1,5 @@
 #pragma once
 
-void logSample();
+#include "SystemStats.h"
+
+void logSystemStats(const SystemStats& stats);

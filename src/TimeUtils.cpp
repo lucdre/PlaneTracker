@@ -26,18 +26,7 @@ std::string getTimeStamp()
 	return stream.str();
 }
 
-std::string getTimeStampString()
-{
-	std::ostringstream stream;
-
-	stream << "Current time: "
-		<< getTimeStamp()
-		<< '\n';
-
-	return stream.str();
-}
-
-std::string getUptimeString()
+std::string getUptime()
 {
 	std::ifstream file("/proc/uptime");
 
@@ -57,12 +46,11 @@ std::string getUptimeString()
 	int seconds = totalSeconds % 60;
 
 	std::ostringstream stream;
-	stream << "Uptime: "
+	stream
 		<< days << "d "
 		<< hours << "h "
 		<< minutes << "m "
-		<< seconds << "s"
-		<< '\n';
+		<< seconds << "s";
 
 	return stream.str();
 }

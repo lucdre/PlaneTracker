@@ -18,16 +18,3 @@ double getCpuLoad()
 
     return load;
 }
-
-std::string getCpuLoadString()
-{
-    std::ostringstream stream;
-
-    double load = getCpuLoad();
-
-    stream << "CPU load: "
-        << load
-        << '\n';
-
-    return stream.str();
-}

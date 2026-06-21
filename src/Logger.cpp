@@ -3,20 +3,21 @@
 #include "TemperatureReader.h"
 #include "MemoryReader.h"
 #include "CpuLoadReader.h"
+#include "SystemStats.h"
 
 #include <fstream>
 
-void logSample()
+void logSystemStats(const SystemStats& stats)
 {
     std::ofstream file("monitor.csv", std::ios::app);
 
     file
-        << getTimeStamp()
+        << stats.timestamp
         << ','
-        << getTemperature()
+        << stats.temperature
         << ','
-        << getMemoryUsedMb()
+        << stats.memoryUsedMb
         << ','
-        << getCpuLoad()
+        << stats.cpuLoad
         << std::endl;
 }

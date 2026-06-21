@@ -20,7 +20,7 @@ add_executable (
 	"src/MemoryReader.cpp"
 	"src/CpuLoadReader.cpp"
 	"src/Logger.cpp"
-)
+    "src/SystemStats.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET PlaneTracker PROPERTY CXX_STANDARD 20)
