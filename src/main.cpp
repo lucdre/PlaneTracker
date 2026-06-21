@@ -1,6 +1,7 @@
 #include "TemperatureReader.h"
 #include "TimeUtils.h"
 #include "MemoryReader.h"
+#include "CpuLoadReader.h"
 
 #include <thread>
 #include <iostream>
@@ -19,6 +20,9 @@ int main()
 
 		//Get the memory usage
 		std::cout << getMemoryString();
+
+		//Get the CPU load
+		std::cout << getCpuLoadString();
 
 		std::cout << '\n';
 

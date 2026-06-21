@@ -18,6 +18,7 @@ add_executable (
 	"src/TemperatureReader.cpp"
 	"src/TimeUtils.cpp"
 	"src/MemoryReader.cpp"
+	"src/CpuLoadReader.cpp"
 )
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
