@@ -3,3 +3,4 @@
 #include <string>
 
 std::string getCpuLoadString();
+double getCpuLoad();

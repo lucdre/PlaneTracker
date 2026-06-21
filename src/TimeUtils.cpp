@@ -6,7 +6,7 @@
 #include <sstream>
 #include <fstream>
 
-std::string getTimeStampString()
+std::string getTimeStamp()
 {
 	auto now = std::chrono::system_clock::now();
 	time_t now_time = std::chrono::system_clock::to_time_t(now);
@@ -21,9 +21,18 @@ std::string getTimeStampString()
 
 	std::ostringstream stream;
 
+	stream << std::put_time(&localTime, "%Y-%m-%d %H:%M:%S");
+
+	return stream.str();
+}
+
+std::string getTimeStampString()
+{
+	std::ostringstream stream;
+
 	stream << "Current time: "
-		<< std::put_time(&localTime, "%Y-%m-%d %H:%M:%S")
-		<< std::endl;
+		<< getTimeStamp()
+		<< '\n';
 
 	return stream.str();
 }
@@ -35,10 +44,12 @@ std::string getUptimeString()
 	double uptimeSeconds;
 	file >> uptimeSeconds;
 
-	int days = static_cast<int>(uptimeSeconds) / 86400;
-	int hours = static_cast<int>(uptimeSeconds) / 3600;
-	int minutes = (static_cast<int>(uptimeSeconds) % 3600) / 60;
-	int seconds = static_cast<int>(uptimeSeconds) % 60;
+	int totalSeconds = static_cast<int>(uptimeSeconds);
+
+	int days = totalSeconds / 86400;
+	int hours = (totalSeconds % 86400) / 3600;
+	int minutes = (totalSeconds % 3600) / 60;
+	int seconds = totalSeconds % 60;
 
 	std::ostringstream stream;
 	stream << "Uptime: "

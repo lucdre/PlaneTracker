@@ -19,6 +19,7 @@ add_executable (
 	"src/TimeUtils.cpp"
 	"src/MemoryReader.cpp"
 	"src/CpuLoadReader.cpp"
+	"src/Logger.cpp"
 )
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)

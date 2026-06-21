@@ -3,7 +3,7 @@
 #include <fstream>
 #include <sstream>
 
-static double getTemperature()
+double getTemperature()
 {
 	std::ifstream file("/sys/class/thermal/thermal_zone0/temp");
 

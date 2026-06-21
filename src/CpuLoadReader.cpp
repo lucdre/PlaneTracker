@@ -3,7 +3,7 @@
 #include <fstream>
 #include <sstream>
 
-static double getCpuLoad()
+double getCpuLoad()
 {
     std::ifstream file("/proc/loadavg");
 

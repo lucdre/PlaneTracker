@@ -16,7 +16,7 @@ static double getMemoryTotalMb()
 	return totalKb / 1024.0;
 }
 
-static double getMemoryUsedMb()
+double getMemoryUsedMb()
 {
 	std::ifstream file("/proc/meminfo");
 

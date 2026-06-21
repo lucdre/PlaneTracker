@@ -2,6 +2,7 @@
 #include "TimeUtils.h"
 #include "MemoryReader.h"
 #include "CpuLoadReader.h"
+#include "Logger.h"
 
 #include <thread>
 #include <iostream>
@@ -26,8 +27,10 @@ int main()
 
 		std::cout << '\n';
 
+		logSample();
+
 		//Sleep for 1 minute
-		std::this_thread::sleep_for(std::chrono::minutes(1));
+		std::this_thread::sleep_for(std::chrono::minutes(10));
 	}
 
 	return 0;

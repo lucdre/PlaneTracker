@@ -4,46 +4,77 @@ A Raspberry Pi-based ADS-B telemetry server written in C++.
 
 ## Features
 
-- Monitor Raspberry Pi CPU temperature
+### System Telemetry
+
+- CPU temperature monitoring
+- Memory usage tracking
+- CPU usage tracking
+- Timestamped logging (monitor.CSV)
+
+### ADS-B
+
+- WIP
 
 ## Hardware
 
-- Raspberry Pi 4 Model B 8GB
+- Raspberry Pi 4 Model B (8GB)
 - FlightAware Pro Stick Plus
-- 3dBi ADS-B 1090 MHz magnetic antenna
+- 1090 MHz ADS-B antenna (3dBi)
 
 ## Software
 
-- Pi24 OS
+- Pi24 OS / DietPi
 - C++20
 - g++
 
 ## Building
 
-SCP to the Raspberry Pi:
+### SCP to the Raspberry Pi:
 ```bash
 scp .\*.cpp .\*.h pi@192.168.1.XXX:~/PlaneTracker/
 ```
 
-Compile on the Raspberry Pi:
+### Compile on the Raspberry Pi:
 
 ```bash
 g++ -std=c++20 *.cpp -o PlaneTracker
 ```
 
-Run:
+## Running
+
+### SSH session
 
 ```bash
 ./PlaneTracker
+```
+
+### Recommended
+
+```bash
+tmux
+./PlaneTracker
+```
+
+## Data output
+
+Logs are saved in:
+```
+monitor.csv
+```
+
+Format:
+```
+timestamp,temperature,memory_mb,cpu_load
+2026-06-21 23:00:00,48.2,243,0.09
 ```
 
 ## Current Status
 
 ### v0.1
 
-- [x] Read Pi temperature
-- [ ] CPU usage
-- [ ] Memory usage
+- [x] Basic Pi Telemetry
+- [ ] 
+- [ ] 
 - [ ] Aircraft count
 
 ## Roadmap

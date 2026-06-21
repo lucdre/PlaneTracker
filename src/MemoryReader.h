@@ -3,3 +3,4 @@
 #include <string>
 
 std::string getMemoryString();
+double getMemoryUsedMb();
