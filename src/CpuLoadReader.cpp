@@ -7,6 +7,11 @@ double getCpuLoad()
 {
     std::ifstream file("/proc/loadavg");
 
+    if (!file)
+    {
+        return 0;
+    }
+
     double load;
 
     file >> load;
@@ -18,8 +23,10 @@ std::string getCpuLoadString()
 {
     std::ostringstream stream;
 
+    double load = getCpuLoad();
+
     stream << "CPU load: "
-        << getCpuLoad()
+        << load
         << '\n';
 
     return stream.str();

@@ -41,6 +41,11 @@ std::string getUptimeString()
 {
 	std::ifstream file("/proc/uptime");
 
+	if (!file)
+	{
+		return "No uptime file found!";
+	}
+
 	double uptimeSeconds;
 	file >> uptimeSeconds;
 
@@ -57,7 +62,7 @@ std::string getUptimeString()
 		<< hours << "h "
 		<< minutes << "m "
 		<< seconds << "s"
-		<< std::endl;
+		<< '\n';
 
 	return stream.str();
 }

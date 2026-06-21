@@ -8,6 +8,11 @@ static double getMemoryTotalMb()
 {
 	std::ifstream file("/proc/meminfo");
 
+	if (!file)
+	{
+		return 0;
+	}
+
 	std::string label;
 	double totalKb;
 
@@ -19,6 +24,11 @@ static double getMemoryTotalMb()
 double getMemoryUsedMb()
 {
 	std::ifstream file("/proc/meminfo");
+
+	if (!file)
+	{
+		return 0;
+	}
 
 	std::string label;
 	double value;
@@ -51,10 +61,13 @@ std::string getMemoryString()
 {
 	std::ostringstream stream;
 
+	double memoryUsedMb = getMemoryUsedMb();
+	double memoryTotalMb = getMemoryTotalMb();
+
 	stream << "Memory usage: "
-		<< getMemoryUsedMb()
+		<< memoryUsedMb
 		<< " MB / "
-		<< getMemoryTotalMb()
+		<< memoryTotalMb
 		<< " MB"
 		<< '\n';
 

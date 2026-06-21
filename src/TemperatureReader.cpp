@@ -7,6 +7,11 @@ double getTemperature()
 {
 	std::ifstream file("/sys/class/thermal/thermal_zone0/temp");
 
+	if (!file)
+	{
+		return 0;
+	}
+
 	int milliDegrees;
 	file >> milliDegrees;
 

@@ -54,6 +54,14 @@ g++ -std=c++20 *.cpp -o PlaneTracker
 tmux
 ./PlaneTracker
 ```
+Detach
+```
+Ctrl + B, then D
+```
+Reattach
+```
+tmux attach
+```
 
 ## Data output
 
